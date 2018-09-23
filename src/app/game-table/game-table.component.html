@@ -1,0 +1,21 @@
+<table class="table border">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Game Name</th>
+      <th>Player 1</th>
+      <th>Player 2</th>
+      <th>Winner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of games" (click)="rowClick(game)">
+      <td>{{game.GameId}}</td>
+      <td>{{game.GameName}}</td>
+      <td>{{game.Player1}}</td>
+      <td>{{game.Player2}}</td>
+      <td>{{game.Winner}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="alert alert-danger" *ngIf="games.length <= 0">No games available</div>

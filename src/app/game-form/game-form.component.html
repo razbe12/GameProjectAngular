@@ -1,0 +1,28 @@
+<form #gameForm="ngForm" name="gameForm" (ngSubmit)="onSubmit(gameForm)">
+    <div class="form-group">
+        <input type="text" name="gameId" #gameId class="form-control mb-2" [(ngModel)]="selectedGame.GameId" id="txbId"
+            placeholder="ID" ngModel />
+    </div>
+    <div class="form-group">
+        <input type="text" name="gameName" #gameName class="form-control mb-2" [(ngModel)]="selectedGame.GameName" id="txbName"
+            placeholder="Game Name" ngModel />
+    </div>
+    <div class="form-group">
+        <input type="text" name="player1" #player1 class="form-control mb-2" [(ngModel)]="selectedGame.Player1" id="txbPlayer1"
+            placeholder="Player 1" ngModel />
+    </div>
+    <div class="form-group">
+        <input type="text" name="player2" #player2 class="form-control mb-2" [(ngModel)]="selectedGame.Player2" id="txbPlayer2"
+            placeholder="Player 2" ngModel />
+    </div>
+    <div class="form-group">
+        <input type="text" name="winner" #winner class="form-control mb-2" [(ngModel)]="selectedGame.Winner" id="txbWinner"
+            placeholder="Winner" ngModel />
+    </div>
+    <div class="btn-group btn-group-lg btn-block" role="group">
+        <input type="button" value="Get" class="btn btn-primary" (click)="updateGameList()">
+        <input type="submit" value="Update" class="btn btn-success" (click)="putGame()">
+        <input type="submit" value="Delete" class="btn btn-danger" (click)="deleteGame()">
+    </div>
+    <small>{{statusMessage}}</small>
+</form>
